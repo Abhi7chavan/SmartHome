@@ -1,5 +1,5 @@
-## greengenius
-greengenius is ems application for household items.
+## SmartHome
+SmartHome is ems application for household items.
 
 Application Overview
 ------------------- |
