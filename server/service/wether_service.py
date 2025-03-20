@@ -18,6 +18,7 @@ async def get_city_coordinates(city: str):
         return {"statuscode":404,"detail":"weather_forecast Coordinates not found for the provided city"}
     else:
         weather_data = get_weather_forecast(latitude, longitude)
+        print(weather_data)
         get_airinfo = get_aqi(latitude, longitude)
         get_aqi_info = get_airinfo['current']
         print(get_aqi_info)
@@ -98,7 +99,10 @@ def get_coordinates(city):
         "format": "json",
     }
 
-    response = requests.get(base_url, params=params)
+    headers = {
+    "User-Agent": "Abhishek-LearningProject/1.0 (abhishekchavan7ac@gmail.com)",
+}
+    response = requests.get(base_url,params=params,headers=headers)
     if response.status_code == 200:
         data = response.json()
         if data:
@@ -120,9 +124,11 @@ def get_weather_forecast(latitude, longitude):
         "forecast_days": 1}
 
     response = requests.get(api_url,params=params)
+    print(response)
         
     if response.status_code == 200:
         weather_data = response.json()
+        print(weather_data)
         return weather_data
     else:
         return None

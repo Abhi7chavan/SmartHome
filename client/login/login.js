@@ -16,6 +16,7 @@ loginBtn.addEventListener("click", async (event) => {
 
   const formData = new FormData(document.querySelector(".sign-in-form"));
   const username = formData.get("username");
+
   const password = formData.get("password");
 
   try {

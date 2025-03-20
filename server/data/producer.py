@@ -7,7 +7,7 @@ fake = Faker()
 class PushToKafka:
     def __init__(self):
         # Correct configuration initialization
-        self.producer = Producer({"bootstrap.servers": "172.30.109.131:9092"})
+        self.producer = Producer({"bootstrap.servers": "localhost:9092"})
         self.topic = 'energy'
 
     def insert_into_kafka(self, message):

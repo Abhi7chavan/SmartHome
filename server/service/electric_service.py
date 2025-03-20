@@ -26,7 +26,7 @@ router = APIRouter()
 class KafkaProducer:
     def __init__(self, client_id='ems-household-manager'):
         self.producer = Producer({
-            "bootstrap.servers": "172.30.109.131:9092",
+            "bootstrap.servers": "localhost:9092",
             "client.id": client_id
         })
         self.topic = 'energy'
@@ -46,7 +46,7 @@ class KafkaProducer:
         self.producer.close()
 
 producer = KafkaProducer()
-realtime_data_task = None  # Global variable to store the task reference
+realtime_data_task = None 
 
 async def send_realtime_data_worker(username, db):
     submeter_data = await get_submeter(username, db)

@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from service.models.permission import PermissionBase
-from service.models.licence import Base
+from service.models.licence import LicenseBase
 from service.models.user import Base
 from service.models.submeter import SubmeterBase
 from service.models.household import houseitembase
@@ -19,7 +19,7 @@ def create_database():
     PermissionBase.metadata.create_all(bind=engine)
     SubmeterBase.metadata.create_all(bind=engine)
     houseitembase.metadata.create_all(bind=engine)
-    
+    LicenseBase.metadata.create_all(bind=engine)
 @app.on_event("startup")
 async def startup_event():
     create_database()

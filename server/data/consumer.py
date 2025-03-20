@@ -4,7 +4,7 @@ class KafkaConsumer:
     def __init__(self):
         # Correct configuration initialization
         self.consumer = Consumer({
-            'bootstrap.servers': '172.30.109.131:9092',
+            'bootstrap.servers': 'locahost:9092',
             'group.id': 'my_consumer_group',
             'auto.offset.reset': 'earliest'
         })

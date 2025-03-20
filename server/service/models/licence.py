@@ -6,9 +6,9 @@ from typing import List
 import random
 import uuid
 
-Base = declarative_base()
+LicenseBase = declarative_base()
 
-class LicenseDB(Base):
+class LicenseDB(LicenseBase):
     __tablename__ = "licence"
     __table_args__ = {'schema': 'meta'} 
 
