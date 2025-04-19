@@ -1,5 +1,5 @@
 ## SmartHome
-SmartHome is ems application for household items
+SmartHome is ems application for household items.
 
 Application Overview
 ------------------- 
